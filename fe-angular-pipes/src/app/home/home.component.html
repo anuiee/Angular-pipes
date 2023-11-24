@@ -1,0 +1,40 @@
+
+<h1>Angular Pipes</h1>
+<ul>
+    <!-- in-built angular pipes -->
+    <li>UpperCasePipe : {{title | uppercase}}</li>
+    <li>LowerCasePipe : {{title1 | lowercase}}</li>
+    <li>Date : {{currentDate| date :'short'}}</li>
+    <li>Currency : {{price| currency : 'INR':'symbol':'3.1-2'}}</li>
+    <li>pi Value : {{piValue| number:'2.1-3'}}</li>
+    <li>Percent : {{0.850| percent}}</li>
+</ul>
+<!-- <h3>custom pipe---{{name| titlePipe}}</h3> -->
+
+
+<h3>Student Table with custom pipe</h3>
+
+<!-- student table with pipe -->
+      
+          <table class="table table-striped"> <!-- attribute directive -->
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Gender</th>
+                </tr>
+              </thead>
+              <tbody>
+                  
+                  <tr *ngFor="let item of students | titlePipe">
+                    <th scope="row">{{ item.Id }}</th>
+                    <td>{{ item.First }}</td>
+                    <td>{{ item.Last }}</td>
+                    <td>{{ item.Gender }}</td>
+                  </tr>
+                    
+              </tbody>
+          </table> 
+         
+
